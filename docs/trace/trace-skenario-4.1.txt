@@ -1,0 +1,2 @@
+Jalankan menu 13 setelah mengimpor dataset. Simpan keluaran aktual dari Run window ke file ini setelah pengujian.
+Jangan mengisi hasil pengujian sebelum benar-benar dijalankan.

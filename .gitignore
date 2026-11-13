@@ -1,0 +1,7 @@
+target/
+.idea/
+*.iml
+out/
+*.pdf
+data/dev-dummy.csv
+kode-terdakwa-privat.*
