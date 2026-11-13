@@ -22,8 +22,6 @@ public class SinglyLinkedList<T> implements StrukturData<T> {
     private long langkahTerakhir;
     private long totalMutasi;
 
-    // ---------- operasi tambah ----------
-
     public void addFirst(T value) {
         Node<T> baru = new Node<>(value);
         baru.next = head;
@@ -70,8 +68,6 @@ public class SinglyLinkedList<T> implements StrukturData<T> {
         }
     }
 
-    // ---------- operasi akses ----------
-
     @Override
     public T get(int position) {
         cekPosisi(position);
@@ -85,8 +81,6 @@ public class SinglyLinkedList<T> implements StrukturData<T> {
     public T peekLast() {
         return tail == null ? null : tail.nilai;
     }
-
-    // ---------- operasi hapus ----------
 
     @Override
     public T remove(int position) {
@@ -111,8 +105,6 @@ public class SinglyLinkedList<T> implements StrukturData<T> {
         totalMutasi++;
         return dihapus.nilai;
     }
-
-    // ---------- pencarian ----------
 
     public int search(Predicate<T> kondisi) {
         long langkah = 0;
@@ -147,8 +139,6 @@ public class SinglyLinkedList<T> implements StrukturData<T> {
     public long getTotalMutasi() {
         return totalMutasi;
     }
-
-    // ---------- lain-lain ----------
 
     @Override
     public int size() {
@@ -210,8 +200,6 @@ public class SinglyLinkedList<T> implements StrukturData<T> {
             throw new IllegalStateException("tail.next harus null");
         }
     }
-
-    // ---------- helper privat ----------
 
     private void cekPosisi(int position) {
         if (position < 0 || position >= size) {
