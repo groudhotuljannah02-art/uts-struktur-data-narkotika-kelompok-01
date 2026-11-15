@@ -19,7 +19,6 @@ class ArsipPutusanTest {
         return new Putusan(id, "NO/" + id, "PN Uji", null, "T-" + id, jenis, berat,
                 null, "Pasal 112", 0, vonis, denda, null, null, null, null);
     }
-
     private ArsipPutusan arsip50() {
         ArsipPutusan a = new ArsipPutusan();
         for (int i = 1; i <= 50; i++) {
