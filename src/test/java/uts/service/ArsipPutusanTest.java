@@ -135,12 +135,12 @@ class ArsipPutusanTest {
     @Test
     void imporCsvMenolakBarisTidakValidTanpaBerhenti(@TempDir Path dir) throws IOException {
         Path f = dir.resolve("uji.csv");
-        String header = String.join(",", CsvPutusan.HEADER);
-        String ok1 = "P1,N/1,PN A,2025-01-02,T1,Sabu,1.5,112,\"112, 114\",12,10,1000,pkt,,,\"1:2\"";
-        String tglSalah = "P2,N/2,PN A,02-01-2025,T2,Sabu,1,,,0,0,0,,,,";
-        String angkaSalah = "P3,N/3,PN A,2025-01-02,T3,Sabu,abc,,,0,0,0,,,,";
-        String ganda = "P1,N/9,PN A,2025-01-02,T9,Sabu,1,,,0,0,0,,,,";
-        String ok2 = "P4,N/4,,,T4,,,,,,,,,,,";
+        String header = String.join(";", CsvPutusan.HEADER);
+        String ok1 = "P1;N/1;PN A;2025-01-02;T1;Sabu;1.5;112;\"112, 114\";12;10;1000;pkt;;;\"1:2\"";
+        String tglSalah = "P2;N/2;PN A;02-01-2025;T2;Sabu;1;;;0;0;0;;;;";
+        String angkaSalah = "P3;N/3;PN A;2025-01-02;T3;Sabu;abc;;;0;0;0;;;;";
+        String ganda = "P1;N/9;PN A;2025-01-02;T9;Sabu;1;;;0;0;0;;;;";
+        String ok2 = "P4;N/4;;;T4;;;;;;;;;;;";
         Files.writeString(f, String.join("\n", header, ok1, tglSalah, angkaSalah, ganda, ok2) + "\n");
         ArsipPutusan a = new ArsipPutusan();
         CsvPutusan.HasilImpor h = CsvPutusan.impor(f, a);
