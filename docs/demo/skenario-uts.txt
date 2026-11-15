@@ -1,0 +1,20 @@
+DOKUMENTASI DEMO UTS
+STRUKTUR DATA PUTUSAN NARKOTIKA
+
+Nama Proyek:
+UTS Struktur Data Putusan Narkotika
+
+Class Demo:
+uts.app.DemoSkenario
+
+Daftar Skenario:
+1. Impor data putusan dari CSV
+2. Pencarian data putusan
+3. Penghapusan dan penambahan data
+4. Filter data menggunakan Kriteria
+5. Pencarian riwayat audit
+6. Penanganan data tidak valid
+7. Penanganan data duplikat
+
+HASIL DEMO:
+Tempelkan keluaran aktual dari program DemoSkenario di bagian ini.
