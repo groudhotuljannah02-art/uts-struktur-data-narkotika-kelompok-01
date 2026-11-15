@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import uts.ds.SinglyLinkedList;
 import uts.model.Putusan;
@@ -155,9 +156,9 @@ public final class CsvPutusan {
         return s.isEmpty() ? null : s;
     }
 
+
     private static LocalDate tanggal(String[] f, int i) {
         String s = f[i].trim();
-
         if (s.isEmpty()) {
             return null;
         }
@@ -165,27 +166,39 @@ public final class CsvPutusan {
         try {
             return LocalDate.parse(s);
         } catch (RuntimeException e) {
-            throw new IllegalArgumentException(
-                    "tanggalPutusan harus yyyy-MM-dd: '" + s + "'");
+            try {
+                return LocalDateTime.parse(
+                        s.replace(' ', 'T')
+                ).toLocalDate();
+            } catch (RuntimeException ex) {
+                throw new IllegalArgumentException(
+                        "Format tanggal tidak valid: '" + s + "'");
+            }
         }
     }
 
     private static double desimal(
             String[] f, int i, String nama) {
-
         String s = f[i].trim();
-
         if (s.isEmpty()) {
             return 0;
         }
 
+        s = s.replaceAll("(?i)gram", "").trim();
+        if (s.matches("-?\\d{1,3}(\\.\\d{3})+,\\d+")) {
+            s = s.replace(".", "").replace(",", ".");
+        } else if (s.matches("-?\\d+,\\d+"))
+        {
+            s = s.replace(",", ".");
+        }
         try {
             return Double.parseDouble(s);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException(
-                    nama + " bukan angka: '" + s + "'");
+                    nama + " bukan angka yang valid: '" + f[i] + "'");
         }
     }
+
 
     private static int bulat(
             String[] f, int i, String nama) {

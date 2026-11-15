@@ -16,7 +16,7 @@ public class Main {
     private static final Scanner IN = new Scanner(System.in);
     private static final ArsipPutusan arsip = new ArsipPutusan();
     private static SinglyLinkedList<Putusan> hasilTerakhir = new SinglyLinkedList<>();
-    private static Path csv = Path.of("data", "putusan-50.csv");
+    private static Path csv = Path.of("data", "Data_Putusan_P01-P25_titikkoma.csv");
 
     public static void main(String[] args) {
         if (args.length > 0) {
