@@ -152,15 +152,12 @@ public class Main {
     private static String kosongNull(String s) {
         return s == null || s.isBlank() ? null : s.trim();
     }
-
     private static double angka(String s) {
         return s.isBlank() ? 0 : Double.parseDouble(s.trim());
     }
-
     private static Double desimalNull(String s) {
         return s.isBlank() ? null : Double.valueOf(s.trim());
     }
-
     private static Integer bulatNull(String s) {
         return s.isBlank() ? null : Integer.valueOf(s.trim());
     }
