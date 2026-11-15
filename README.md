@@ -1,4 +1,4 @@
-# UTS Struktur Data – Putusan Narkotika (Kelompok XX)
+# UTS Struktur Data – Putusan Narkotika (Kelompok 01)
 
 ## Identitas Kelompok
 
