@@ -1,5 +1,9 @@
 package uts.gui;
 
+import javax.swing.SwingUtilities;
+
 public class GuiMain {
-    // TODO: Isi atribut, constructor, dan method sendiri sesuai panduan UTS.
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new MainFrame().setVisible(true));
+    }
 }
